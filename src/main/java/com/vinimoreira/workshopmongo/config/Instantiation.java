@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import com.sun.tools.javac.code.Attribute.Array;
 import com.vinimoreira.workshopmongo.domain.Post;
 import com.vinimoreira.workshopmongo.domain.User;
 import com.vinimoreira.workshopmongo.dto.AuthorDTO;
@@ -44,7 +45,8 @@ public class Instantiation implements CommandLineRunner {
 		
 		postRepository.saveAll(Arrays.asList(post1, post2));
 		
-		
+		maria.getPosts().addAll(Arrays.asList(post1, post2));
+		userRepository.save(maria);
 		
 	}
 

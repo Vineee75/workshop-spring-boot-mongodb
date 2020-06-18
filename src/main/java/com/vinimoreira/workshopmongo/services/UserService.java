@@ -41,6 +41,11 @@ public class UserService {
 	
 	// D
 	
+	public void delete(String id) {
+		findById(id);
+		repo.deleteById(id);
+	}
+	
 	// Fim dos métodos CRUD
 	
 	public User fromDTO(UserDTO objDto) {
